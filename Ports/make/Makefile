@@ -2,9 +2,9 @@ include ../../Library/GNU.mk
 
 Title=		GNU Make
 Name=		make
-Version=	4.2.1
+Version=	4.3
 Site=		$(GnuHome)/$(Name)
-Source=		$(GnuMirror)/$(Name)/$(Name)-$(Version).tar.bz2
+Source=		$(GnuMirror)/$(Name)/$(Name)-$(Version).tar.gz
 License=	GPLv3
 
 BuildRequires += $(LibDir)/libintl.a # gettext
