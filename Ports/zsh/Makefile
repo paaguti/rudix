@@ -9,7 +9,8 @@ Files=		http://downloads.sourceforge.net/zsh/zsh-$(Version)-doc.tar.xz
 License=	MIT-like
 
 LicenseFile=	$(SourceDir)/LICENCE
-
+GnuConfigureExtra += --enable-ldflags=-L/usr/local/lib
+GnuConfigureExtra += --enable-libs=-liconv
 MakeInstallExtra+=install.info
 
 define after_install_hook
