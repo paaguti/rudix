@@ -13,6 +13,11 @@ define build_hook
 	env $(MakeExtras) make -C $(BuildDir)
 endef
 
+define install_hook
+	@-echo "Installing in $(InstallDir)"
+	cd $(BuildDir); make PREFIX=../$(InstallDir)/usr/local install
+endef
+
 define test_hook
 $(BinDir)/bzip2 --version | grep $(Version)
 endef
