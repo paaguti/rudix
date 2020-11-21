@@ -17,7 +17,9 @@ GnuConfigureExtra += --with-ssl
 define after_install_hook
 mv $(InstallDir)$(Prefix)/etc/lynx.cfg $(InstallDir)$(Prefix)/etc/lynx.cfg.default
 mv $(InstallDir)$(Prefix)/etc/lynx.lss $(InstallDir)$(Prefix)/etc/lynx.lss.default
-install -m 644 $(SourceDir)/{CHANGES,COPYHEADER*,PROBLEMS} $(InstallDir)/$(DocDir)/$(Name)
+for f in $(SourceDir)/CHANGES $(SourceDir)/COPYHEADER* $(SourceDir)/PROBLEMS; do \
+	install -m 644 $$f  $(InstallDir)/$(DocDir)/$(Name); \
+done
 endef
 
 define test_hook
