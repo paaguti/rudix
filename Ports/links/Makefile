@@ -10,6 +10,7 @@ Source=		http://links.twibright.com/download/$(Name)-$(Version).tar.bz2
 License=	GPLv2
 
 GnuConfigureExtra += --with-ssl
+GnuConfigureExtra += --without-libevent
 
 define test_hook
 $(BinDir)/links -version | grep $(Version)
