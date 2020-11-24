@@ -1,0 +1,69 @@
+diff -rU3 mg3a-build/def.h mg3a-20201122/def.h
+--- mg3a-build/def.h	2020-11-22 12:58:35.000000000 +0100
++++ mg3a-20201122/def.h	2020-11-22 18:29:59.000000000 +0100
+@@ -677,7 +677,14 @@
+ void	invalidatecache(void);
+ void	reframe_window(WINDOW *wp);
+ void	update(void);
+-void mouse_mode(int);
++
++#ifdef  MOUSE
++void    mouse_mode(INT);
++#else
++inline  void mouse_mode(INT mode)
++{
++}
++#endif
+
+ /* echo.c */
+
+diff -rU3 mg3a-build/keymap.c mg3a-20201122/keymap.c
+--- mg3a-build/keymap.c	2020-11-22 12:58:35.000000000 +0100
++++ mg3a-20201122/keymap.c	2020-11-22 18:23:28.000000000 +0100
+@@ -467,7 +467,11 @@
+ 	1,
+ 	rescan,
+ 	{
++#ifdef MOUSE
+ 		{'A',	'M',	metalbA,	NULL},
++#else
++		{'A',	'D',	metalbA,	NULL},
++#endif
+ 	}
+ };
+
+diff -rU3 mg3a-build/tty.c mg3a-20201122/tty.c
+--- mg3a-build/tty.c	2020-11-22 12:58:35.000000000 +0100
++++ mg3a-20201122/tty.c	2020-11-22 18:30:43.000000000 +0100
+@@ -17,7 +17,9 @@
+ int		setupterm(char *, int, int *);
+ int		tputs(const char *, int, int (*)(int));
+
++#ifdef MOUSE
+ static void ttputsf(char *format, ...);
++#endif
+
+ char	*CM,			/* cursor move				*/
+ 	*CE,			/* clear to end of line			*/
+@@ -328,12 +330,11 @@
+  * mode  0 => disable mouse reporting
+  *       1 => enable mouse reporting
+  */
+-void
+-mouse_mode(int mode)
+-{
+ #ifdef MOUSE
++static void
++mouse_mode(INT mode)
++{
+   ttputsf("\e[?9%c", (mode == 1) ? 'h' : 'l');  // Enable/Disable mouse report
+-#endif
+ }
+
+ static void
+@@ -347,3 +348,4 @@
+   for (int i=0; localbuf[i]; i++)
+     ittputc(localbuf[i]);
+ }
++#endif
+Only in mg3a-20201122: tty.c~
