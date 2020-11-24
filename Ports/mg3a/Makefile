@@ -3,7 +3,7 @@ include ../../Library/GNU.mk
 
 Title=		MG3a
 Name=		mg3a
-Version=	20201120
+Version=	20201122
 Site=		https://github.com/paaguti
 Source=		https://github.com/paaguti/$(Name)/archive/$(Version).tar.gz
 License=	GPL
