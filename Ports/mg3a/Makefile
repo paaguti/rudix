@@ -11,6 +11,7 @@ License=	GPL
 ReadMeFile=	$(SourceDir)/README
 PatchLevel = -p1
 
+GnuConfigureExtra += --disable-mouse
 define before_build_hook
 cd $(BuildDir) && ./bootstrap.sh
 endef

@@ -14,7 +14,7 @@ License=	GPL
 UncompressedName=lynx2.8.9rel.1
 
 GnuConfigureExtra += --enable-ipv6
-GnuConfigureExtra += --with-gnutls=/usr/local # --with-ssl
+GnuConfigureExtra += --with-ssl=/usr/local
 GnuConfigureExtra += --with-screen=ncursesw
 GnuConfigureExtra += --with-zlib --with-bzlib 
 GnuConfigureExtra += --enable-scrollbar

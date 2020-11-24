@@ -2,7 +2,7 @@ include ../../Library/GNU.mk
 
 Title=		Curl
 Name=		curl
-Version=	7.67.0
+Version=	7.73.0
 Site=		https://curl.haxx.se
 Source=		$(Site)/download/$(Name)-$(Version).tar.bz2
 License=        GPL
