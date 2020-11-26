@@ -1,6 +1,6 @@
 include ../../Library/GNU.mk
 BuildRequires += $(LibDir)/libintl.la	# gettext
-BuildRequires += $(LibDir)/libssl.la	# openssl
+# BuildRequires += $(LibDir)/libssl.la	# openssl
 
 Title=		Links
 Name=		links
@@ -9,7 +9,10 @@ Site=		http://links.twibright.com/
 Source=		http://links.twibright.com/download/$(Name)-$(Version).tar.bz2
 License=	GPLv2
 
-GnuConfigureExtra += --with-ssl
+#
+# try to use ssl provided by macOS
+#
+GnuConfigureExtra += --with-ssl=/usr
 GnuConfigureExtra += --without-libevent
 
 define test_hook
