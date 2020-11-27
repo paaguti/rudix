@@ -13,6 +13,10 @@ GnuConfigureExtra += --with-x=no
 GnuConfigureExtra += --with-ns=no
 GnuConfigureExtra += --with-modules
 
+define before_build_hook
+cd $(BuildDir); ./autogen.sh
+endef
+
 define after_install_hook
 rm -rf $(InstallDir)$(LocalStateDir)
 endef
