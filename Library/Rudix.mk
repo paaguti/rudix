@@ -133,7 +133,7 @@ test: pkg check
 	@touch $@
 
 installclean:
-	rm -rf install $(InstallDir)
+	rm -rf install $(InstallDir) $(Name)install.pkg
 
 pkgclean:
 	rm -rf pkg *.pkg $(ResourcesDir)

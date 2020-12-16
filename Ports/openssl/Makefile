@@ -11,5 +11,5 @@ ReadMeFile=	 $(SourceDir)/README
 LicenseFile= $(SourceDir)/LICENSE
 
 define build_hook
-cd $(BuildDir) && INSTALL_PREFIX=$(DestDir) ./Configure darwin64-x86_64-cc
+cd $(BuildDir) && ./config
 endef
