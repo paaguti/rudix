@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ ! -d /usr/local/etc/ssl/certs ]; then
+  mkdir -p /usr/local/etc/ssl/certs
+fi
+cd /usr/local/etc/ssl/certs
+curl https://curl.haxx.se/ca/cacert.pem > cacert.pem
+chmod 0644 cacert.pem
+exit 0
