@@ -2,14 +2,14 @@ include ../../Library/GNU.mk
 
 Title=		MG-Portable
 Name=		mg
-Version=	6.7
+Version=	6.8.1
 Site=		https://github.com/ibara/mg
 Source=		https://github.com/ibara/mg/archive/mg-$(Version).tar.gz
 License=        BSD
 
 UncompressedName = mg-mg-$(Version)
 ReadMeFile = $(BuildDir)/README.md
-LicenseFile = $(BuildDir)/README-mg
+LicenseFile = $(BuildDir)/README-Mg
 
 define after_install_hook
 install -m 0644 $(BuildDir)/tutorial $(DestDir)$(DocDir)/$(Name)
