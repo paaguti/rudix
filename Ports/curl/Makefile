@@ -2,7 +2,7 @@ include ../../Library/GNU.mk
 
 Title=		Curl
 Name=		curl
-Version=	7.73.0
+Version=	7.74.0
 Site=		https://curl.haxx.se
 Source=		$(Site)/download/$(Name)-$(Version).tar.bz2
 License=        GPL
@@ -18,6 +18,7 @@ GnuConfigureExtra += --without-ssl
 #
 GnuConfigureExtra += --with-nghttp2
 GnuConfigureExtra += --with-ngtcp2 # --with-quiche
+GnuConfigureExtra += --with-nghttp3
 
 define test_hook
 $(BinDir)/curl --version | grep $(Version)
