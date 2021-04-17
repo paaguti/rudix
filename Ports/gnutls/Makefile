@@ -2,7 +2,7 @@ include ../../Library/GNU.mk
 
 Title=		GnuTLS
 Name=			gnutls
-Version=	3.7.0
+Version=	3.7.1
 # take the minor version number as suffix and replace it away
 VMajor=	$(patsubst %$(suffix $(Version)),v%,$(Version))
 Site=		https://gnutls.org
