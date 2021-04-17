@@ -6,13 +6,13 @@ BuildRequires += $(LibDir)/libidn.la # libidn
 
 Title=		mpop
 Name=		mpop
-Version=	1.0.28
-Site=		http://mpop.sourceforge.net/
-Source=		http://sourceforge.net/projects/mpop/files/mpop/$(Version)/$(Name)-$(Version).tar.bz2
+Version=	1.4.13
+Site=		https://marlam.de/mpop
+Source=		$(Site)/releases/mpop-$(Version).tar.xz
 License=	GPL
 
 EnvExtra += PKG_CONFIG_PATH=/usr/lib/pkgconfig
-GnuConfigureExtra += --with-ssl=openssl
+GnuConfigureExtra += --with-tls=gnutls --with-macosx-keyring
 
 define after_install_hook
 install -m 644 $(SourceDir)/doc/mpop* $(InstallDir)/$(DocDir)/$(Name)  
