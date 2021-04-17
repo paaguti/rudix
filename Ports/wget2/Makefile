@@ -7,7 +7,7 @@ Site=		https://gitlab.com/gnuwget/wget2
 Source=		$(GnuMirror)/wget/$(Name)-$(Version).tar.gz
 License=    GPL3+
 
-GnuConfigureExtra += --with-openssl
+GnuConfigureExtra += --with-ssl=gnutls
 
 define test_hook
 $(BinDir)/wget2 --version | grep $(Version)
