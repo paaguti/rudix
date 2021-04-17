@@ -15,7 +15,8 @@ CFlags += -I$(IncludeDir)
 CxxFlags += -I$(IncludeDir)
 LdFlags += -L$(LibDir)
 
-GnuConfigureExtra += --with-openssl
+GnuConfigureExtra += --with-gnutls
+GnuConfigureExtra += --without-openssl
 GnuConfigureExtra += --with-libiconv-prefix=/usr/local
 GnuConfigureExtra += --with-libintl-prefix=/usr/local
 GnuConfigureExtra += --without-modules
