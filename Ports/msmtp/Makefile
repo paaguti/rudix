@@ -6,13 +6,13 @@ BuildRequires += $(LibDir)/libidn.la # libidn
 
 Title=		msmtp
 Name=		msmtp
-Version=	1.4.31
-Site=		http://msmtp.sourceforge.net/
-Source=		http://sourceforge.net/projects/msmtp/files/msmtp/$(Version)/$(Name)-$(Version).tar.bz2
+Version=	1.8.15
+Site=		https://marlam.de/msmtp/
+Source=		https://marlam.de/msmtp/releases/msmtp-$(Version).tar.xz
 License=	GPL
 
 EnvExtra += PKG_CONFIG_PATH=/usr/lib/pkgconfig
-GnuConfigureExtra += --with-ssl=openssl
+GnuConfigureExtra += --with-ssl=gnutls
 
 define after_install_hook
 install -m 644 $(SourceDir)/doc/msmtp* $(InstallDir)/$(DocDir)/$(Name)  
