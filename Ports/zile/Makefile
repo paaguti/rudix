@@ -6,7 +6,7 @@ GnuMirror=https://ftp.gnu.org/gnu/
 
 Title=		GNU Zile
 Name=		zile
-Version=	2.4.14
+Version=	2.6.1
 Site=		$(GnuHome)/$(Name)
 Source=		$(GnuMirror)/$(Name)/$(Name)-$(Version).tar.gz
 License=	GPL
