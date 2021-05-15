@@ -3,7 +3,7 @@ include ../../Library/GNU.mk
 Title=		emACT
 Name=		emact
 Version=	2.58.0
-Site=		http://www.elegis.com/emacs
+Site=		http://christian.jullien.free.fr/emacs/
 Source=		http://downloads.sourceforge.net/project/$(Name)/$(Name)-$(Version).tar.gz
 License=        GPL
 
