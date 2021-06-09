@@ -13,6 +13,10 @@ License=	GPL
 
 GnuConfigureExtra += --without-x
 
+define before_build_hook
+  mkdir -p $(BuildDir)/src/elfobjs
+endef
+
 define after_install_hook
 mv $(InstallDir)$(SysConfDir)/slsh.rc \
 	$(InstallDir)$(SysConfDir)/slsh.rc.default
